@@ -1,2 +1,2 @@
-# ttest_webpage
-Website for Welch's t-test
+# Welch's t-test
+Simple website for Welch's t-test
