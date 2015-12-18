@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+	<title>Welch's' t-test</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../app/app.js"></script>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../app/css/app.css">
+</head>
+
+<body ng-controller="MyCtrl">
+	<div class="container">
+		<h1>Welch's t-test</h1>
+		This webpage is designed to run the Welch's t test on the provided data. Data can be provided in two ways: raw (one entry per row) or regular (multiple entries per row).
+	</div>
+	<div class="container">
+		<h2>Examples</h2>
+		<table class="table table-bordered">
+			<thead class="tableHeader">
+				<tr>
+					<th>raw</th>
+					<th>regular</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Method1 99
+						<br> Method1 95
+						<br> Method1 93
+						<br> Method2 92
+						<br> Method2 93
+						<br> Method2 94
+						<br> Method3 94
+						<br> Method3 99
+						<br>
+					</th>
+					<th>Method1 95, 93
+						<br> Method2 92, 93, 94
+						<br> Method3 99.3 92.4 93.4</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="container">
+		<h2>Execute</h2>
+		<form ng-submit="processForm()">
+			<div class="well">
+				<label>Type</label><br>
+				<label class="radio-inline">
+					<input name="type" type="radio" ng-model="formType" value="raw" required> raw
+				</label>
+				<label class="radio-inline">
+					<input name="type" type="radio" ng-model="formType" ng-value="regular" required> regular
+				</label>
+			</div>
+			<br/>
+			<!-- NAME -->
+			<div id="data-group" class="form-group">
+				<label>Data</label>
+				<!--<input type="text" name="name" class="form-control" placeholder="Bruce Wayne" ng-model="formData.name">-->
+				<textarea class="form-control" rows="5" ng-model="formData"></textarea>
+				<span class="help-block"></span>
+			</div>
+			<!-- SUBMIT BUTTON -->
+			<button type="submit" class="btn btn-success btn-lg btn-block">
+				<span class="glyphicon glyphicon-flash"></span> Submit!
+			</button>
+		</form>
+	</div>
+	<div class="container" style="margin-top:10px">
+		<div ng-bind-html="result | to_trusted"></div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">This page is powered by <a href="https://diuf.unifr.ch/main/hisdoc/divaservices" target="_blank">DIVAServices</a> - a research project from the DIVA Group at the University of Fribourg, Switzerland</p>
+		</div>
+	</footer>
+</body>
+
+</html>

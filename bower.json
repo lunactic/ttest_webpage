@@ -1,0 +1,17 @@
+{
+  "name": "dia-distributed",
+  "version": "0.0.0",
+  "main": "app/app.js",
+  "appPath": "app",
+  "authors": [
+    "Marcel Würsch <marcel.wuersch@unifr.ch>"
+  ],
+  "private": true,
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "1.5.0-rc.0",
+    "bootstrap": "3.3.6"
+  }
+}
