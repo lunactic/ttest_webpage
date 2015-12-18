@@ -20,7 +20,7 @@ function MyCtrl($scope, $http) {
             "highlighter": {}
         }
 
-        $http.post('http://192.168.56.101/services/statistics/cmplst', data).
+        $http.post('http://divaservices.unifr.ch/statistics/cmplst', data).
             success(function (response) {
                 $scope.result = response.data
             });
